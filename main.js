@@ -14,6 +14,7 @@ function draw() {
     clearCanvas();
     for (i = 0; i < particles.length; i++) {
         var p = particles[i];
+        p.behaviors();
         p.update();
         p.show();
     }
