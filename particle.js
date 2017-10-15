@@ -6,7 +6,8 @@ function Particle(p, c){
   this.acc = {x: 0, y: 0};
   this.colour = c;
   this.size = 3;
-  this.speed = 2;
+  this.speed = 5;
+  this.force = 0.4;
 }
 
 Particle.prototype.update = function(){
@@ -40,7 +41,8 @@ Particle.prototype.applyForce = function(f){
 Particle.prototype.seek = function(target){
   var s = {x: target.x - this.pos.x, y: target.y - this.pos.y};
       s = magnitude(s, this.speed);
-      return {x: s.x-this.vel.x, y: s.y-this.vel.y}
+      s =  {x: s.x-this.vel.x, y: s.y-this.vel.y}
+      return {x: limit(s.x, this.force), y: limit(s.y, this.force)};
 }
 
 
@@ -55,4 +57,11 @@ function random(a, b){
 function magnitude(val, max){
   var calc = Math.sqrt(val.x*val.x+val.y*val.y)
   return {x:(max/calc)*val.x, y:(max/calc)*val.y}
+}
+function limit(val, max){
+  if(val < max)
+    return val;
+  else {
+    return max;
+  }
 }
