@@ -9,3 +9,26 @@ body{
   left:0;
   float:left;
 }
+#controls{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding:10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+	background:white;
+	top:0;
+  right:0;
+  width: 100;
+	position:absolute;
+}
+#title{
+  font-size: 150%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+#plug{
+  font-weight: 400;
+}
+.link{
+  color: #0091EA;
+}
